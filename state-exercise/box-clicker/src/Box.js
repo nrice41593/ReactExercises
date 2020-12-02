@@ -12,7 +12,7 @@ const ColorBox = styled.div`
 `;
 const Box = props => {
   return (
-    // return a ColorBox object and pass your onClick props and color props as well as the id
+    <ColorBox onClick={props.handleClick} color={props.color} id={props.id} />
   );
 };
 

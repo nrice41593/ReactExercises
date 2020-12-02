@@ -6,19 +6,16 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    //For this exercise, you will create 24 components (square shaped divs) that have a specific background color. Each time you click on one of the divs, it cycles to the next background color.
-
-    //BONUS - Make the background color changing random, i.e. when I click a color, it selects randomly from the list of colors.
-
     // set default state
     const boxes = [];
     const numBoxes = 24;
-
-    // Create a for loop with a threshhold of numBoxes
-    //    push your boxes array to set your id: i and color: this.getRandomColor()
-    
-    // Set your state = {boxes}
-    // this.state = { boxes };
+    for (let i = 0; i < numBoxes; i++) {
+      boxes.push({
+        id: i,
+        color: this.getRandomColor()
+      });
+    }
+    this.state = { boxes };
 
     this.handleBoxClick = this.handleBoxClick.bind(this); // method bind
   }
