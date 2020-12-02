@@ -1,15 +1,19 @@
-//TODO: import react and component,  and then import your pokecard.css
+import React, { Component } from 'react';
+import './Pokecard.css';
 
 export default class Pokecard extends Component {
-    render() {
-        // String Templates
-        //TODO: create a const altText and using templating syntax pass in this.props.name and this.props.type
+  render() {
+    // String templates, ES2015 Feature
+    const altText = `${this.props.name}, type: ${this.props.type}`;
 
-        // Const and Object Destructuring
-        // TODO: create a const {name, image, type} and set equal to this.props
-
-
-        // Use css classes here
-        // return a div containing the the card name, the image, and the type. 
-    }
+    // Const and object Destructuring, ES2015
+    const {name, image, type} = this.props;
+    return (
+      <div className="card">
+        <h2 className="card-name">{name}</h2>
+        <img src={image} alt={altText}/>
+        <h4 className="type"><strong>Type:</strong> {type}</h4>
+      </div>
+    );
+  }
 }
